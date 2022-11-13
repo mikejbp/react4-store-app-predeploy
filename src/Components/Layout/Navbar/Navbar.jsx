@@ -1,19 +1,11 @@
-import Logo from '@/assets/navBar/Logo.svg'
-import ProfilePhoto from '@/assets/navBar/ProfilePhoto.svg'
+import { Box, Button, Flex, HStack, Hide, Image, Link } from '@chakra-ui/react'
 import { links, pagesRoutes } from '@/Helpers'
-import {
-  Box,
-  Button,
-  Flex,
-  Hide,
-  HStack,
-  IconButton,
-  Image,
-  Link,
-} from '@chakra-ui/react'
-import { GrCart } from 'react-icons/gr'
-import { NavLink } from 'react-router-dom'
+
+import Dropdown from '@/Components/ShoppingCart/DropDown'
+import Logo from '@/assets/navBar/Logo.svg'
 import NavBarMobileScreen from './NavBarMobileScreen'
+import { NavLink } from 'react-router-dom'
+import ProfilePhoto from '@/assets/navBar/ProfilePhoto.svg'
 
 function Navbar() {
   return (
@@ -34,7 +26,7 @@ function Navbar() {
               <Image src={Logo} h='30px' w='40px' alt='' />
             </Link>
             <Flex gap={{ md: 3, lg: 6, xl: 8 }}>
-              {links.map((link) => {
+              {links.map(link => {
                 const { id, title } = link
 
                 return (
@@ -73,12 +65,7 @@ function Navbar() {
             </Flex>
           </HStack>
           <HStack align='center'>
-            <IconButton
-              aria-label='Cart'
-              size='lg'
-              icon={<GrCart />}
-              fontSize={'large'}
-            />
+            <Dropdown />
             <Button w='60px' h='36px' bgColor='transparent'>
               <Image src={ProfilePhoto} alt='profile-icon' />
             </Button>

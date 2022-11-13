@@ -1,12 +1,14 @@
-import { NewData } from '@/Helpers'
-import { ProductCard } from '@/Utils'
-import { Flex, Text } from '@chakra-ui/react'
-import { useWindowWidth } from '@react-hook/window-size'
-import { useEffect, useState } from 'react'
-import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import './NewProducts.css'
+
+import { Flex, Text } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
+
+import { NewData } from '@/Helpers'
+import { ProductCard } from '@/Utils'
+import Slider from 'react-slick'
+import { useWindowWidth } from '@react-hook/window-size'
 
 export default function NewProducts() {
   const onlyWidth = useWindowWidth()
@@ -54,7 +56,7 @@ export default function NewProducts() {
       </Flex>
 
       <Slider {...settings}>
-        {NewData.map((data) => {
+        {NewData.map(data => {
           const { id, stock, img, icon, description, oldPrice, price } = data
 
           return (
@@ -65,8 +67,8 @@ export default function NewProducts() {
               img={img}
               icon={icon}
               description={description}
-              oldPrice={oldPrice}
-              price={price}
+              oldPrice={oldPrice.toFixed(2)}
+              price={price.toFixed(2)}
             />
           )
         })}

@@ -1,4 +1,4 @@
-import { extendTheme, theme as base } from '@chakra-ui/react'
+import { theme as base, extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   breakpoints: {
@@ -9,6 +9,7 @@ const theme = extendTheme({
     xl: '1280px',
     '2xl': '1440px',
     '3xl': '1560px',
+    '4xl': '1920px',
   },
   fonts: {
     heading: `'Poppins', ${base.fonts.heading}`,
